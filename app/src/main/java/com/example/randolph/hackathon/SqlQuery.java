@@ -25,7 +25,7 @@ public class SqlQuery {
     private static final String _sFname = "Firstname";
     private static final String _sMname = "Middlename";
     private static final String _sLname = "Lastname";
-    private static final String _sEmail = "Email";
+    private static final String _sEmail = "SendEmail";
     private static final String _sCardNm = "Card_number";
     private static final String _sPin = "Pin_code";
     private static final String _sBday = "Birthday";
