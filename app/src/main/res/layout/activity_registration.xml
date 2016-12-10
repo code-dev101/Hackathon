@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-=======
+
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#FF9800"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.randolph.hackathon.Registration.Registration">
->>>>>>> 77e8d2b275edc7c470054fe3dd8b0fc0ed9fea23
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -142,7 +139,6 @@
                 android:layout_alignLeft="@+id/birthday"
                 android:layout_alignStart="@+id/birthday" />
 
-<<<<<<< HEAD
     <Button
         android:text="Create account"
         android:layout_width="wrap_content"
@@ -170,7 +166,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="37dp"
         android:layout_marginEnd="37dp" />
-=======
+
             <EditText
                 android:background="@drawable/edit_text"
                 android:layout_width="wrap_content"
@@ -214,8 +210,6 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
->>>>>>> 77e8d2b275edc7c470054fe3dd8b0fc0ed9fea23
 
 
 </RelativeLayout>
