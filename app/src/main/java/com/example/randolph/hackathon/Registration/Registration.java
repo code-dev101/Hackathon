@@ -31,7 +31,7 @@ public class Registration extends AppCompatActivity {
     EditText etPinCode = (EditText)findViewById(R.id.pincode);
     EditText etUsername = (EditText)findViewById(R.id.username);
     EditText etPassword = (EditText)findViewById(R.id.password);
- //   Button btReg = (Button)findViewById(R.id.btnreg);
+    Button btReg = (Button)findViewById(R.id.btncreate);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
