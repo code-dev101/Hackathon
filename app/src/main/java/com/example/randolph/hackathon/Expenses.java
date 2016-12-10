@@ -5,8 +5,10 @@ package com.example.randolph.hackathon;
  */
 
 import java.util.HashMap;
+
 public class Expenses {
     private String category;
+<<<<<<< HEAD
     private float salary;
     private float _percentage;
 
@@ -28,16 +30,16 @@ public class Expenses {
     public float getSalary() {
         return salary;
     }
+=======
+    private double salary, total;
+    private int _percentage;
+>>>>>>> 7822bc4af474315ec5a9b60e970ae7a6e401d440
 
-    public void setSalary(float salary) {
-        this.salary = salary;
+    public void initializedCompute(String ctg, int _percent){
+        HashMap <String, Integer> hm = new HashMap<>();
+        hm.put("food",20);
     }
-
-    public float get_percentage() {
-        return _percentage;
-    }
-
-    public void set_percentage(float _percentage) {
-        this._percentage = _percentage;
+    public void compute(){
+        total = (double)(salary - (salary * _percentage));
     }
 }
