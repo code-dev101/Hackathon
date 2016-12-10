@@ -1,9 +1,11 @@
 package com.example.randolph.hackathon;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -49,6 +51,13 @@ public class QR extends AppCompatActivity implements ZXingScannerView.ResultHand
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mScannerView.destroyDrawingCache();
+        setContentView(R.layout.activity_qr);
+    }
+
+    @Override
     public void handleResult(Result rawResult) {
 
         int amount = Integer.parseInt(rawResult.getText());
@@ -58,8 +67,8 @@ public class QR extends AppCompatActivity implements ZXingScannerView.ResultHand
         View promptView = layoutInflater.inflate(R.layout.validatepin,null);
         final EditText txtpin = (EditText) promptView.findViewById(R.id.txt_pin);
         final TextView txtIndicate = (TextView)  promptView.findViewById(R.id.txt_indicate);
-        
-        Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0,btnclear,btnXx;
+
+        final  Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0,btnclear,btnXx;
         btn1 = (Button) promptView.findViewById(R.id.btn_1);
         btn2 = (Button) promptView.findViewById(R.id.btn_2);
         btn3 = (Button) promptView.findViewById(R.id.btn_3);
@@ -69,19 +78,12 @@ public class QR extends AppCompatActivity implements ZXingScannerView.ResultHand
         btn7 = (Button) promptView.findViewById(R.id.btn_7);
         btn8 = (Button) promptView.findViewById(R.id.btn_8);
         btn9 = (Button) promptView.findViewById(R.id.btn_9);
-        btn0 = (Button) promptView.findViewById(R.id.btn_1);
+        btn0 = (Button) promptView.findViewById(R.id.btn_0);
         btnclear = (Button) promptView.findViewById(R.id.btn_clear);
         btnXx = (Button) promptView.findViewById(R.id.btnX);
 
         Button [] btnArray = new Button[]{btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0,btnclear,btnXx};
-        for(Button b : btnArray){
-            b.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                                        
-                }
-            });
-        }
+
         txtIndicate.setVisibility(View.INVISIBLE);
 
         final AlertDialog.Builder imgBuilder = new AlertDialog.Builder(QR.this);
@@ -93,6 +95,36 @@ public class QR extends AppCompatActivity implements ZXingScannerView.ResultHand
         alertDialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         alertDialog.show();
+        for(final Button b : btnArray){
+            b.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(view.getId()-2131493031 <10)
+                        txtpin.setText(txtpin.getText()+ Integer.toString(view.getId()-2131493031));
+                    else if(view.getId()-2131493031 ==11){
+                        txtpin.setText(txtpin.getText()+ Integer.toString(view.getId()-2131493042));
+
+                    }else if(view.getId()-2131493031 ==10){
+                        txtpin.setText("");
+                    }else{
+                        int length = txtpin.getText().length();
+                        if (length > 0) {
+                            txtpin.getText().delete(length - 1, length);
+                        }
+                    }
+                    if(txtpin.getText().toString().equals("4000")){
+                        Toast.makeText(QR.this, "Transaction successful!", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(getApplicationContext(), QR.class);
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        alertDialog.dismiss();
+                        startActivity(i);
+
+                    }
+
+
+                }
+            });
+        }
     }
 
 }
