@@ -166,7 +166,6 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="37dp"
         android:layout_marginEnd="37dp" />
-<<<<<<< HEAD
 
             <EditText
                 android:background="@drawable/edit_text"
@@ -179,23 +178,6 @@
                 android:layout_alignBottom="@+id/birthday"
                 android:layout_alignLeft="@+id/birthday"
                 android:layout_alignStart="@+id/birthday" />
-
-            <Button
-                android:text="Create account"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/pincode"
-                android:layout_toEndOf="@+id/username"
-                android:layout_marginTop="11dp"
-                android:background="#4d3f7d"
-                android:textColor="#fff"
-                android:id="@+id/btncreate"
-                android:onClick="createAccount"
-                android:layout_toRightOf="@+id/username"
-                />
-=======
-                =======
->>>>>>> 9759bf493e5c3e9b246aff07219081edcf80cc5c
 
             </LinearLayout>
         </LinearLayout>
