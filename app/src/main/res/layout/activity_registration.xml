@@ -6,9 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.randolph.hackathon.Registration.Registration">
 
-<<<<<<< HEAD
-    <include layout="@layout/regform"/>
-=======
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -145,6 +143,6 @@
         android:layout_marginRight="49dp"
         android:layout_marginEnd="49dp" />
 
->>>>>>> eb3c6ce1f598b997087440ca89c76eb184fe2398
+
 
 </RelativeLayout>
