@@ -5,6 +5,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -17,20 +19,19 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
+
         sql = new SqlQuery();
-        try{
-            SqlQuery.createTable(this);
-        }catch (Exception ex){
-            Snackbar.make(null, ex.getMessage(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
-        }
+        SqlQuery.createTable(this);
 
         blogin = (Button) findViewById(R.id.btnlogin);
         breg = (Button) findViewById(R.id.btnreg);
         blogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String sUname, sUpass;
                 EditText uname = (EditText) findViewById(R.id.txtuname);
                 EditText upass = (EditText) findViewById(R.id.txtupass);
