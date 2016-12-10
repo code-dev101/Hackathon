@@ -2,6 +2,7 @@ package com.example.randolph.hackathon.Registration;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -20,29 +21,46 @@ public class Registration extends AppCompatActivity {
     private String username, password;
     private String fullName;
 
-    EditText etFirstName = (EditText)findViewById(R.id.fname);
-    EditText etMiddleName = (EditText)findViewById(R.id.mname);
-    EditText etLastName = (EditText)findViewById(R.id.lname);
-    EditText etAddress = (EditText)findViewById(R.id.address);
-    EditText etEmailAdd = (EditText)findViewById(R.id.emailaddress);
-    EditText etCardNum = (EditText)findViewById(R.id.cardnumber);
-    DatePicker dpBirthday = (DatePicker) findViewById(R.id.birthday);
-    EditText etContactNum = (EditText)findViewById(R.id.contact);
-    EditText etPinCode = (EditText)findViewById(R.id.pincode);
-    EditText etUsername = (EditText)findViewById(R.id.username);
-    EditText etPassword = (EditText)findViewById(R.id.password);
- //   Button btReg = (Button)findViewById(R.id.btnreg);
+
+
+    EditText etFirstName;
+    EditText etMiddleName;
+    EditText etLastName;
+    EditText etAddress;
+    EditText etEmailAdd;
+    EditText etCardNum;
+    DatePicker dpBirthday;
+    EditText etContactNum;
+    EditText etPinCode;
+    EditText etUsername;
+    EditText etPassword;
+    Button btReg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        middleName = "";
+        ///delete later
+        SqlQuery.createTable(this);
+
+        etFirstName = (EditText)findViewById(R.id.fname);
+        etMiddleName = (EditText)findViewById(R.id.mname);
+        etLastName = (EditText)findViewById(R.id.lname);
+        etAddress = (EditText)findViewById(R.id.address);
+        etEmailAdd = (EditText)findViewById(R.id.emailaddress);
+        etCardNum = (EditText)findViewById(R.id.cardnumber);
+        dpBirthday = (DatePicker) findViewById(R.id.birthday);
+        etContactNum = (EditText)findViewById(R.id.contact);
+        etPinCode = (EditText)findViewById(R.id.pincode);
+        etUsername = (EditText)findViewById(R.id.username);
+        etPassword = (EditText)findViewById(R.id.password);
+        btReg = (Button)findViewById(R.id.btncreate);
 
     }
 
 
-    public void createAccount(){
+
+    public void createAccount(View view){
         //save user data to database
         firstName = etFirstName.getText().toString();
         middleName = etMiddleName.getText().toString();

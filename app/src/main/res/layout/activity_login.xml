@@ -16,7 +16,13 @@
         android:paddingRight="30px"
         android:orientation="vertical">
         <EditText
+            android:id="@+id/txtuname"
             android:hint="username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/txtupass"
+            android:hint="password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <Button
