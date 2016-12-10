@@ -136,6 +136,7 @@
         android:layout_toEndOf="@+id/birthday"
         android:layout_marginTop="11dp"
         android:id="@+id/btncreate"
+        android:onClick="createAccount"
         />
 
 
