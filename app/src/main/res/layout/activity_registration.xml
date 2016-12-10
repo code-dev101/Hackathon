@@ -9,7 +9,7 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:layout_marginTop="50dp"
-        android:id="@+id/fname1"
+        android:id="@+id/fname"
         android:hint="First name"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -18,9 +18,43 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
+        android:id="@+id/mname"
+        android:hint="Middle Name"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/fname"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
         android:id="@+id/lname"
         android:hint="Last name"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/fname1"/>
+        android:layout_below="@id/mname" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/address"
+        android:hint="Address"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/lname" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/birthday"
+        android:hint="Birthday"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/address" />
+
+
+
+
 
 </RelativeLayout>
