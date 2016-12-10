@@ -8,9 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.randolph.hackathon.Registration.Registration;
+
 public class Login extends AppCompatActivity {
     SqlQuery sql;
-    private Button blogin;
+    private Button blogin, breg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,7 @@ public class Login extends AppCompatActivity {
         }
 
         blogin = (Button) findViewById(R.id.btnlogin);
+        breg = (Button) findViewById(R.id.btnreg);
         blogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +48,13 @@ public class Login extends AppCompatActivity {
                 } catch (Exception e) {
                     Snackbar.make(v, "user account does not exist! " + e.getMessage(), Snackbar.LENGTH_LONG).show();
                 }
+            }
+        });
+        breg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), Registration.class);
+                startActivity(i);
             }
         });
     }
