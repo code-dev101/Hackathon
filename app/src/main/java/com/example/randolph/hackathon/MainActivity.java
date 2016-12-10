@@ -11,6 +11,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     private void test(){
-        String x = "hello":
+        String x = "hello";
+        String y = "Hello Paul commit";
+        String z = "new Commit";
+        String ab = "Practice Repository";
+        String test = "rand";
+        String push = "Gly Siopao";
+        String earlson = "BAKIT AYAW MAG UPDATE";
     }
 }
