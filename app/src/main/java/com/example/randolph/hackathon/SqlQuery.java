@@ -6,9 +6,13 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.SimpleFormatter;
 
 /**
  * Created by user on 12/10/2016.
@@ -20,6 +24,8 @@ public class SqlQuery {
     private static Cursor c;
     private static final String TABLE_USER = "tbl_user";
     private static final String TABLE_CATEGORY = "tbl_category";
+    private static final String TABLE_TRANSACTION = "tbl_transaction";
+    private static final String TABLE_PRODUCT = "tbl_product";
     private static final String _sUid = "User_id";
     private static final String _sUname = "Username";
     private static final String _sUpass = "Password";
@@ -33,7 +39,13 @@ public class SqlQuery {
     private static final String _sContact = "Contact_number";
     private static final String _sCategory = "Category";
     private static final String _sPct = "Percentage";
+    private static final String _sTid  = "Transaction_ID";
+    private static final String _sTransName = "Transaction_Name";
+    private static final String _sAMount ="Amount";
+    private static final String _dateToday = "Date_transact";
+
     private static String uID ="";
+
 
     public static void createTable(Activity activity){
         try {
@@ -44,8 +56,12 @@ public class SqlQuery {
                 db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_USER + " ("+_sUid+" INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         " "+ _sUname+" VARCHAR(30) , "+ _sUpass+" VARCHAR(30), "+ _sFname+" VARCHAR(30), "+ _sMname +" VARCHAR(30)," +
                         " "+ _sLname+ " VARCHAR(30),"+ _sBday+" DATE,"+_sContact+" INTEGER, "+ _sEmail +" VARCHAR(30), "+_sCardNm+" VARCHAR(50), "+ _sPin+ " INTEGER(5)  );");
-                //CREATE
+                //CREATE Category
                 db.execSQL("CREATE TABLE IF NOT EXISTS "+TABLE_CATEGORY+ " (Category_id INTEGER PRIMARY KEY AUTOINCREMENT, "+_sCategory+" VARCHAR(20), "+_sPct+" VARCHAR(20) )");
+
+                //CREATE TRANSACTION
+                db.execSQL("CREATE TABLE IF NOT EXISTS "+TABLE_TRANSACTION+" ("+_sTid+" INTEGER PRIMARY KEY AUTONINCREMENT, "+_sTransName+" VARCHAR(30)," +
+                        ""+_sAMount+" DOUBLE(11,2), "+_dateToday+" DATETIME");
             }
 
         } catch (SQLException e) {
@@ -61,6 +77,19 @@ public class SqlQuery {
 
         }catch (Exception ex){
             ex.printStackTrace();
+        }
+
+    }
+    public void startTransaction(String _productname , double _amount){
+
+        try {
+            if(_productname != null && _amount != 0){
+                DateFormat transactTime = new SimpleDateFormat("YYYY-mm-dd HH:mm:ss");
+                Date dateObj = new Date();
+                db.execSQL("INSERT INTO "+TABLE_TRANSACTION+" VALUES (1,'"+_productname+"', "+ _amount+" , '"+transactTime.format(dateObj).toString()+"')");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
     }
