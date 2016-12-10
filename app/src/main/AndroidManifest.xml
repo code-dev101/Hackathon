@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.randolph.hackathon">
-
+    <uses-permission android:name="android.permission.CAMERA"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,18 +10,22 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Login"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainMenu"
+            android:label="@string/title_activity_main_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Registration.Registration">
+
+        </activity>
+        <activity android:name=".Category" />
+        <activity android:name=".QR">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainMenu"
-            android:label="@string/title_activity_main_menu"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Registration.Registration"></activity>
     </application>
 
 </manifest>
