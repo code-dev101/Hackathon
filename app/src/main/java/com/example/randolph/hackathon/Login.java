@@ -16,27 +16,35 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        sql = new SqlQuery();
+        try{
+            SqlQuery.createTable(this);
+        }catch (Exception ex){
+            Snackbar.make(null, ex.getMessage(), Snackbar.LENGTH_LONG).setAction("Action", null).show();
+        }
+
         blogin = (Button) findViewById(R.id.btnlogin);
         blogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Boolean auth = false;
+
+                String sUname, sUpass;
                 EditText uname = (EditText) findViewById(R.id.txtuname);
                 EditText upass = (EditText) findViewById(R.id.txtupass);
-
+                sUname = uname.getText().toString();
+                sUpass = upass.getText().toString();
                 try {
-                    auth = sql.isRegistered(uname.getText().toString(), upass.getText().toString());
+
+                    boolean auth = sql.isRegistered(sUname, sUpass);
                     if(auth == true){
                         Intent i = new Intent(getApplicationContext(), MainMenu.class);
                         startActivity(i);
                     }
                     else
-                        Snackbar.make(null, "user account does not exist!", Snackbar.LENGTH_LONG).show();
+                        Snackbar.make(v, "user account does not exist!", Snackbar.LENGTH_LONG).show();
                 } catch (Exception e) {
-                    Snackbar.make(null, "user account does not exist! " + e.getMessage(), Snackbar.LENGTH_LONG).show();
+                    Snackbar.make(v, "user account does not exist! " + e.getMessage(), Snackbar.LENGTH_LONG).show();
                 }
-
-
             }
         });
     }
