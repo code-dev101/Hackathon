@@ -28,7 +28,7 @@ public class Registration extends AppCompatActivity {
         EditText etMiddleName = (EditText)findViewById(R.id.mname);
         EditText etLastName = (EditText)findViewById(R.id.lname);
         EditText etAddress = (EditText)findViewById(R.id.address);
-        EditText etEmailAdd = (EditText)findViewById(R.id.emailadd);
+        EditText etEmailAdd = (EditText)findViewById(R.id.Em);
         EditText etCardNum = (EditText)findViewById(R.id.cardnum);
         DatePicker dpBirthday = (DatePicker) findViewById(R.id.birthday);
         EditText etContactNum = (EditText)findViewById(R.id.contact);
@@ -52,6 +52,7 @@ public class Registration extends AppCompatActivity {
 
     public void login(){
         //save user data to database
+        
 
     }
 
