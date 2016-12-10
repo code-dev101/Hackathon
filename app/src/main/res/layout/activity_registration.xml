@@ -1,118 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+=======
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FF9800"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.randolph.hackathon.Registration.Registration">
+>>>>>>> 77e8d2b275edc7c470054fe3dd8b0fc0ed9fea23
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_marginTop="20dp"
-        android:id="@+id/fname"
-        android:hint="First name"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/mname"
-        android:hint="Middle Name"
-        android:layout_below="@+id/fname"
-        android:layout_alignLeft="@+id/fname"
-        android:layout_alignStart="@+id/fname" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/lname"
-        android:hint="Last name"
-        android:layout_below="@+id/mname"
-        android:layout_alignLeft="@+id/mname"
-        android:layout_alignStart="@+id/mname" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/address"
-        android:hint="Address"
-        android:layout_below="@+id/lname"
-        android:layout_alignLeft="@+id/lname"
-        android:layout_alignStart="@+id/lname" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/fname"
+                    android:hint="First name"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:background="@drawable/edit_text"/>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/cardnumber"
-        android:hint="Card Number"
-        android:layout_below="@+id/emailaddress"
-        android:layout_alignLeft="@+id/address"
-        android:layout_alignStart="@+id/address" />
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/pincode"
-        android:hint="Pin Code"
-        android:layout_below="@+id/cardnumber"
-        android:layout_alignLeft="@+id/address"
-        android:layout_alignStart="@+id/address" />
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/username"
-        android:hint="User name"
-        android:layout_below="@+id/pincode"
-        android:layout_alignLeft="@+id/address"
-        android:layout_alignStart="@+id/address" />
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/password"
-        android:hint="Password"
-        android:layout_below="@+id/username"
-        android:layout_alignLeft="@+id/address"
-        android:layout_alignStart="@+id/address" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/mname"
+                    android:hint="Middle Name"
+                    android:layout_below="@+id/fname"
+                    android:layout_alignLeft="@+id/fname"
+                    android:layout_alignStart="@+id/fname"
+                    android:background="@drawable/edit_text"/>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/emailaddress"
-        android:hint="Email Adress"
-        android:layout_below="@+id/contact"
-        android:layout_alignLeft="@+id/birthday"
-        android:layout_alignStart="@+id/birthday" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/lname"
+                    android:hint="Last name"
+                    android:layout_below="@+id/mname"
+                    android:layout_alignLeft="@+id/mname"
+                    android:layout_alignStart="@+id/mname"
+                    android:background="@drawable/edit_text"/>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="#b6b6b6"/>
+            <EditText
+                android:background="@drawable/edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/address"
+                android:hint="Address"
+                android:layout_below="@+id/lname"
+                android:layout_alignLeft="@+id/lname"
+                android:layout_alignStart="@+id/lname"
+                android:layout_weight="0.37" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="date"
-        android:ems="10"
-        android:id="@+id/contact"
-        android:hint="contact #"
-        android:layout_alignBottom="@+id/birthday"
-        android:layout_alignLeft="@+id/birthday"
-        android:layout_alignStart="@+id/birthday" />
+            <EditText
+                android:background="@drawable/edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/cardnumber"
+                android:hint="Card Number"
+                android:layout_below="@+id/emailaddress"
+                android:layout_alignLeft="@+id/address"
+                android:layout_alignStart="@+id/address" />
+            <EditText
+                android:background="@drawable/edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/pincode"
+                android:hint="Pin Code"
+                android:layout_below="@+id/cardnumber"
+                android:layout_alignLeft="@+id/address"
+                android:layout_alignStart="@+id/address" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="#b6b6b6"/>
+            <EditText
+                android:background="@drawable/edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/username"
+                android:hint="User name"
+                android:layout_below="@+id/pincode"
+                android:layout_alignLeft="@+id/address"
+                android:layout_alignStart="@+id/address" />
+            <EditText
+                android:background="@drawable/edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/password"
+                android:hint="Password"
+                android:layout_below="@+id/username"
+                android:layout_alignLeft="@+id/address"
+                android:layout_alignStart="@+id/address" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="#b6b6b6"/>
+            <EditText
+                android:background="@drawable/edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/emailaddress"
+                android:hint="Email Adress"
+                android:layout_below="@+id/contact"
+                android:layout_alignLeft="@+id/birthday"
+                android:layout_alignStart="@+id/birthday" />
 
+<<<<<<< HEAD
     <Button
         android:text="Create account"
         android:layout_width="wrap_content"
@@ -140,6 +170,52 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="37dp"
         android:layout_marginEnd="37dp" />
+=======
+            <EditText
+                android:background="@drawable/edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/contact"
+                android:hint="contact #"
+                android:layout_alignBottom="@+id/birthday"
+                android:layout_alignLeft="@+id/birthday"
+                android:layout_alignStart="@+id/birthday" />
+
+            <Button
+                android:text="Create account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pincode"
+                android:layout_toEndOf="@+id/username"
+                android:layout_marginTop="11dp"
+                android:background="#4d3f7d"
+                android:textColor="#fff"
+                android:id="@+id/btncreate"
+                android:onClick="createAccount"
+                android:layout_toRightOf="@+id/username"
+                />
+
+            <DatePicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/birthday"
+                android:hint="Birthday"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+                android:layout_below="@+id/mname"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="49dp"
+                android:layout_marginEnd="49dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+>>>>>>> 77e8d2b275edc7c470054fe3dd8b0fc0ed9fea23
 
 
 </RelativeLayout>
