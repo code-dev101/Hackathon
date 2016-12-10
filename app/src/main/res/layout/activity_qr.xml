@@ -15,9 +15,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/butQR"
         android:onClick="HandleClick"
+        android:background="@drawable/qrscanner"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/qrscanner" />
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>

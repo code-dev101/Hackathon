@@ -43,9 +43,11 @@ public class SqlQuery {
     private static final String _sTransName = "Transaction_Name";
     private static final String _sAMount ="Amount";
     private static final String _dateToday = "Date_transact";
+    private static final String _userCredit = "Credits";
 
     private static String uID ="";
-
+    private static String uPin = "";
+    private static Double uCredits = 0.0;
 
     public static void createTable(Activity activity){
         try {
@@ -55,7 +57,8 @@ public class SqlQuery {
                 //CREATE USER TABLE
                 db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_USER + " ("+_sUid+" INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         " "+ _sUname+" VARCHAR(30) , "+ _sUpass+" VARCHAR(30), "+ _sFname+" VARCHAR(30), "+ _sMname +" VARCHAR(30)," +
-                        " "+ _sLname+ " VARCHAR(30),"+ _sBday+" DATE,"+_sContact+" INTEGER, "+ _sEmail +" VARCHAR(30), "+_sCardNm+" VARCHAR(50), "+ _sPin+ " INTEGER(5)  );");
+                        " "+ _sLname+ " VARCHAR(30),"+ _sBday+" DATE,"+_sContact+" INTEGER, "+ _sEmail +" VARCHAR(30), "+_sCardNm+" VARCHAR(50), " +
+                        ""+ _sPin+ " INTEGER(5) , "+_userCredit+" DOUBLE(12,2) );");
                 //CREATE Category
                 db.execSQL("CREATE TABLE IF NOT EXISTS "+TABLE_CATEGORY+ " (Category_id INTEGER PRIMARY KEY AUTOINCREMENT, "+_sCategory+" VARCHAR(20), "+_sPct+" VARCHAR(20) )");
 
@@ -131,10 +134,13 @@ public class SqlQuery {
     public Boolean isRegistered(String uName, String uPass){
         try {
             int x =0;
-            c = db.rawQuery("SELECT "+ _sUname + ", "+_sUpass+" , "+ _sUid+" FROM "+TABLE_USER+"  ;",null);
+            c = db.rawQuery("SELECT "+ _sUname + ", "+_sUpass+" , "+ _sUid+" , "+_sPin+" , "+_userCredit+" FROM "+TABLE_USER+"  ;",null);
+
             while(c.moveToNext()){
                 if(c.getString(0).equals(uName) && c.getString(1).equals(uPass)){
                     uID = c.getString(2);
+                    uPin = Integer.toString(c.getInt(3));
+                    uCredits = c.getDouble(4);
                     return true;
                 }else{
                     x++;
@@ -186,6 +192,8 @@ public class SqlQuery {
         }
         return null;
     }
-
+    public void updateCredits(Double recentCredits){
+        db.execSQL("UPDATE "+TABLE_USER+" SET "+_userCredit+" = "+recentCredits+" WHERE "+_sUid+" = "+uID+"");
+    }
 
 }
