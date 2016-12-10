@@ -127,5 +127,17 @@
         android:layout_alignLeft="@+id/birthday"
         android:layout_alignStart="@+id/birthday" />
 
+    <Button
+        android:text="Create account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pincode"
+        android:layout_toRightOf="@+id/birthday"
+        android:layout_toEndOf="@+id/birthday"
+        android:layout_marginTop="11dp"
+        android:id="@+id/btncreate"
+        android:onClick="createAccount"
+        />
+
 
 </RelativeLayout>
