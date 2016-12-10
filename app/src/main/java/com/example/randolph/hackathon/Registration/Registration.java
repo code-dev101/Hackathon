@@ -52,7 +52,7 @@ public class Registration extends AppCompatActivity {
 
     public void login(){
         //save user data to database
-        
+
     }
 
 
