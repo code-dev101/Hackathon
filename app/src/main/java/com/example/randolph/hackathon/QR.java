@@ -58,34 +58,32 @@ public class QR extends AppCompatActivity implements ZXingScannerView.ResultHand
         View promptView = layoutInflater.inflate(R.layout.validatepin,null);
         final EditText txtpin = (EditText) promptView.findViewById(R.id.txt_pin);
         final TextView txtIndicate = (TextView)  promptView.findViewById(R.id.txt_indicate);
+        
+        Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0,btnclear,btnXx;
+        btn1 = (Button) promptView.findViewById(R.id.btn_1);
+        btn2 = (Button) promptView.findViewById(R.id.btn_2);
+        btn3 = (Button) promptView.findViewById(R.id.btn_3);
+        btn4 = (Button) promptView.findViewById(R.id.btn_4);
+        btn5 = (Button) promptView.findViewById(R.id.btn_5);
+        btn6 = (Button) promptView.findViewById(R.id.btn_6);
+        btn7 = (Button) promptView.findViewById(R.id.btn_7);
+        btn8 = (Button) promptView.findViewById(R.id.btn_8);
+        btn9 = (Button) promptView.findViewById(R.id.btn_9);
+        btn0 = (Button) promptView.findViewById(R.id.btn_1);
+        btnclear = (Button) promptView.findViewById(R.id.btn_clear);
+        btnXx = (Button) promptView.findViewById(R.id.btnX);
 
-        txtIndicate.setVisibility(View.INVISIBLE);
-        txtpin.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                if(txtpin.getTextSize() == 4){
-                    if(txtpin.getText().toString().equals("4000"));
-                    {
-                        Toast.makeText(getApplicationContext(), "Coorect Pin!" , Toast.LENGTH_SHORT);
-                        txtIndicate.setVisibility(View.INVISIBLE);
-
-                    }
-                }else{
-                    txtIndicate.setVisibility(View.VISIBLE);
-
+        Button [] btnArray = new Button[]{btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0,btnclear,btnXx};
+        for(Button b : btnArray){
+            b.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                                        
                 }
-            }
-        });
+            });
+        }
+        txtIndicate.setVisibility(View.INVISIBLE);
+
         final AlertDialog.Builder imgBuilder = new AlertDialog.Builder(QR.this);
         imgBuilder.setView(promptView)
                 .setCancelable(false);
