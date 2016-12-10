@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FF9800"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,44 +15,54 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:layout_marginTop="20dp"
-                android:id="@+id/fname"
-                android:hint="First name"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="18dp"
-                android:layout_marginStart="18dp" />
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/mname"
-                android:hint="Middle Name"
-                android:layout_below="@+id/fname"
-                android:layout_alignLeft="@+id/fname"
-                android:layout_alignStart="@+id/fname" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/lname"
-                android:hint="Last name"
-                android:layout_below="@+id/mname"
-                android:layout_alignLeft="@+id/mname"
-                android:layout_alignStart="@+id/mname" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/fname"
+                    android:hint="First name"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:background="@drawable/edit_text"/>
 
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/mname"
+                    android:hint="Middle Name"
+                    android:layout_below="@+id/fname"
+                    android:layout_alignLeft="@+id/fname"
+                    android:layout_alignStart="@+id/fname"
+                    android:background="@drawable/edit_text"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/lname"
+                    android:hint="Last name"
+                    android:layout_below="@+id/mname"
+                    android:layout_alignLeft="@+id/mname"
+                    android:layout_alignStart="@+id/mname"
+                    android:background="@drawable/edit_text"/>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:background="#b6b6b6"/>
             <EditText
-                android:layout_width="wrap_content"
+                android:background="@drawable/edit_text"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
                 android:ems="10"
@@ -59,9 +70,11 @@
                 android:hint="Address"
                 android:layout_below="@+id/lname"
                 android:layout_alignLeft="@+id/lname"
-                android:layout_alignStart="@+id/lname" />
+                android:layout_alignStart="@+id/lname"
+                android:layout_weight="0.37" />
 
             <EditText
+                android:background="@drawable/edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
@@ -72,6 +85,7 @@
                 android:layout_alignLeft="@+id/address"
                 android:layout_alignStart="@+id/address" />
             <EditText
+                android:background="@drawable/edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
@@ -81,7 +95,12 @@
                 android:layout_below="@+id/cardnumber"
                 android:layout_alignLeft="@+id/address"
                 android:layout_alignStart="@+id/address" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="#b6b6b6"/>
             <EditText
+                android:background="@drawable/edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
@@ -92,6 +111,7 @@
                 android:layout_alignLeft="@+id/address"
                 android:layout_alignStart="@+id/address" />
             <EditText
+                android:background="@drawable/edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
@@ -101,8 +121,12 @@
                 android:layout_below="@+id/username"
                 android:layout_alignLeft="@+id/address"
                 android:layout_alignStart="@+id/address" />
-
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="#b6b6b6"/>
             <EditText
+                android:background="@drawable/edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
@@ -114,6 +138,7 @@
                 android:layout_alignStart="@+id/birthday" />
 
             <EditText
+                android:background="@drawable/edit_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="date"
@@ -131,9 +156,12 @@
                 android:layout_below="@+id/pincode"
                 android:layout_toEndOf="@+id/username"
                 android:layout_marginTop="11dp"
+                android:background="#4d3f7d"
+                android:textColor="#fff"
                 android:id="@+id/btncreate"
                 android:onClick="createAccount"
-                android:layout_toRightOf="@+id/username" />
+                android:layout_toRightOf="@+id/username"
+                />
 
             <DatePicker
                 android:layout_width="wrap_content"
@@ -149,6 +177,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="49dp"
                 android:layout_marginEnd="49dp" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
