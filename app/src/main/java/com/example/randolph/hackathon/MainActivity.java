@@ -16,6 +16,6 @@ public class MainActivity extends AppCompatActivity {
         String z = "new Commit";
         String ab = "Practice Repository";
         String test = "rand";
-        String push = "Gly Siopao"
+        String push = "Gly Siopao";
     }
 }
