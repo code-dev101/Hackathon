@@ -11,6 +11,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     private void test(){
-        String x = "hello":
+        String x = "hello";
+        String y = "Hello Paul commit";
+        String z = "new Commit";
     }
 }
