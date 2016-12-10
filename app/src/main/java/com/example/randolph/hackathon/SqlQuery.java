@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by user on 12/10/2016.
@@ -30,7 +31,8 @@ public class SqlQuery {
     private static final String _sPin = "Pin_code";
     private static final String _sBday = "Birthday";
     private static final String _sContact = "Contact_number";
-    private static final String _sCategory = "Contact_number";
+    private static final String _sCategory = "Category";
+    private static final String _sPct = "Percentage";
     private static String uID ="";
 
     public static void createTable(Activity activity){
@@ -43,7 +45,7 @@ public class SqlQuery {
                         " "+ _sUname+" VARCHAR(30) , "+ _sUpass+" VARCHAR(30), "+ _sFname+" VARCHAR(30), "+ _sMname +" VARCHAR(30)," +
                         " "+ _sLname+ " VARCHAR(30),"+ _sBday+" DATE,"+_sContact+" INTEGER, "+ _sEmail +" VARCHAR(30), "+_sCardNm+" VARCHAR(50), "+ _sPin+ " INTEGER(5)  );");
                 //CREATE
-                db.execSQL("CREATE TABLE IF NOT EXISTS "+TABLE_CATEGORY+ " (Category_id INTEGER PRIMARY KEY AUTOINCREMENT, "+_sCategory+" VARCHAR(20))");
+                db.execSQL("CREATE TABLE IF NOT EXISTS "+TABLE_CATEGORY+ " (Category_id INTEGER PRIMARY KEY AUTOINCREMENT, "+_sCategory+" VARCHAR(20), "+_sPct+" VARCHAR(20) )");
             }
 
         } catch (SQLException e) {
@@ -115,8 +117,45 @@ public class SqlQuery {
         }
         return false;
     }
-    public void addCategory(){
-        db.execSQL("");
+    public void addCategory(HashMap<String,Integer> userCategory){
+        try {
+
+            for(Map.Entry<String,Integer>  entry : userCategory.entrySet()){
+                db.execSQL("INSERT "+TABLE_CATEGORY+" VALUES(1,'"+ entry.getKey() +"', "+entry.getValue()+")");
+            }
+//            c = db.rawQuery("SELECT "+ _sCategory + " FROM "+TABLE_CATEGORY+"  ;",null);
+
+//            if(c.getCount() = 0){
+
+//            }else{
+//                for(Map.Entry<String, Integer> entry : userCategory.entrySet()){
+//                    while(c.moveToNext()){
+//                        if(entry.getKey().equals(c.getString(0))){
+//
+//                        }
+//                    }
+//                }
+//            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public HashMap<String,Integer> getCategory(){
+        c = db.rawQuery("SELECT * FROM "+TABLE_CATEGORY+"  ;",null);
+        HashMap<String,Integer> hashCat = new HashMap<>();
+        while(c.moveToNext()){
+            hashCat.put(c.getString(1), c.getInt(2));
+        }
+        return hashCat;
+
+    }
+    public String getUserEmail(){
+        c = db.rawQuery("SELECT "+_sEmail+" FROM "+TABLE_CATEGORY+"  ;",null);
+        while (c.moveToNext()){
+            return c.getString(0);
+        }
+        return null;
     }
 
 
