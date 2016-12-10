@@ -24,21 +24,7 @@ public class Registration extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
         middleame = "";
 
-<<<<<<< HEAD
-=======
-        EditText etFirstName = (EditText)findViewById(R.id.fname);
-        EditText etMiddleName = (EditText)findViewById(R.id.mname);
-        EditText etLastName = (EditText)findViewById(R.id.lname);
-        EditText etAddress = (EditText)findViewById(R.id.address);
-        EditText etEmailAdd = (EditText)findViewById(R.id.Em);
-        EditText etCardNum = (EditText)findViewById(R.id.cardnum);
-        DatePicker dpBirthday = (DatePicker) findViewById(R.id.birthday);
-        EditText etContactNum = (EditText)findViewById(R.id.contact);
-        EditText etPinCode = (EditText)findViewById(R.id.pincode);
-        EditText etUsername = (EditText)findViewById(R.id.username);
-        EditText etPassword = (EditText)findViewById(R.id.password);
-        Button btReg = (Button)findViewById(R.id.btnReg);
->>>>>>> 7822bc4af474315ec5a9b60e970ae7a6e401d440
+
     }
 
     public void checkConnection(){
