@@ -17,6 +17,6 @@ public class MainActivity extends AppCompatActivity {
         String ab = "Practice Repository";
         String test = "rand";
         String push = "Gly Siopao";
-        String earlson = "ICE CREAAAAAAM";
+        String earlson = "BAKIT AYAW MAG UPDATE";
     }
 }
