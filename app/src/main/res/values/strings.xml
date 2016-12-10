@@ -6,6 +6,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+<<<<<<< HEAD
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
@@ -20,4 +21,9 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+=======
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+>>>>>>> 33c45ea162a8b8394205265965a27ff2bd9ae19a
 </resources>
