@@ -10,8 +10,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Login"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainMenu"
             android:label="@string/title_activity_main_menu"
@@ -23,7 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
