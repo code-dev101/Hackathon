@@ -41,7 +41,7 @@ public class SqlQuery {
             if(activity != null){
                 db = activity.openOrCreateDatabase("db_user", Context.MODE_PRIVATE, null);
                 //CREATE USER TABLE
-                db.execSQL("CREATE TABLE IF NOT EXISTS" + TABLE_USER + " ("+_sUid+" INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_USER + " ("+_sUid+" INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         " "+ _sUname+" VARCHAR(30) , "+ _sUpass+" VARCHAR(30), "+ _sFname+" VARCHAR(30), "+ _sMname +" VARCHAR(30)," +
                         " "+ _sLname+ " VARCHAR(30),"+ _sBday+" DATE,"+_sContact+" INTEGER, "+ _sEmail +" VARCHAR(30), "+_sCardNm+" VARCHAR(50), "+ _sPin+ " INTEGER(5)  );");
                 //CREATE
