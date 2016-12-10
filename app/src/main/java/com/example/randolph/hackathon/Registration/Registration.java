@@ -6,7 +6,9 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
+import com.example.randolph.hackathon.Connection;
 import com.example.randolph.hackathon.R;
+import com.example.randolph.hackathon.SqlQuery;
 
 import java.util.Date;
 
@@ -38,12 +40,19 @@ public class Registration extends AppCompatActivity {
 
     public void checkConnection(){
         try{
+            Connection.checkNetworkAvailability(this);
+            login();
 
         } catch (Exception e){
             e.printStackTrace();
             return;
         }
 
+    }
+
+    public void login(){
+        //save user data to database
+        
     }
 
 
