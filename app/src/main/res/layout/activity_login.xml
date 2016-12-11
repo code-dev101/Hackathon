@@ -18,23 +18,26 @@
             android:id="@+id/txtuname"
             android:inputType="textWebEditText"
             android:hint="username"
-            android:background="#fff"
+            android:background="@drawable/edit_text"
             android:layout_width="match_parent"
-            android:layout_height="80px"
-            android:layout_marginBottom="5px"/>
+            android:layout_height="100px"
+            android:layout_marginBottom="5px"
+            android:padding="15dp"/>
         <EditText
             android:id="@+id/txtupass"
             android:inputType="textWebPassword"
             android:hint="password"
-            android:background="#fff"
             android:layout_width="match_parent"
-            android:layout_height="80px"/>
+            android:layout_height="100px"
+            android:padding="15dp"
+            android:background="@drawable/edit_text"/>
         <Button
             android:id="@+id/btnlogin"
             android:text="LOGIN"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            />
         <Button
             android:id="@+id/btnreg"
             android:text="REGISTER"

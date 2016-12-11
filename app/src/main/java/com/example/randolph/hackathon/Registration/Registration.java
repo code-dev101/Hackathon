@@ -1,13 +1,17 @@
 package com.example.randolph.hackathon.Registration;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.randolph.hackathon.Connection;
+import com.example.randolph.hackathon.Login;
+import com.example.randolph.hackathon.MainMenu;
 import com.example.randolph.hackathon.R;
 import com.example.randolph.hackathon.SqlQuery;
 
@@ -57,6 +61,14 @@ public class Registration extends AppCompatActivity {
         etPassword = (EditText)findViewById(R.id.password);
         btReg = (Button)findViewById(R.id.btncreate);
 
+        btReg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent loadMenu = new Intent(getApplicationContext(), Login.class);
+                startActivity(loadMenu);
+            }
+        });
+
     }
 
 
@@ -82,7 +94,12 @@ public class Registration extends AppCompatActivity {
         SqlQuery query = new SqlQuery();
         query.createAccount(username, password, firstName, middleName, lastName, birthday, contactNum, emailAdd, cardNumber, pinCode);
 
+
+        Toast.makeText(this, "Successfully created an account.", Toast.LENGTH_SHORT).show();
+
     }
+
+
 
 
 }

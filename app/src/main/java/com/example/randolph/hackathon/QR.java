@@ -26,8 +26,9 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class QR extends AppCompatActivity implements ZXingScannerView.ResultHandler {
     private ZXingScannerView mScannerView;
-    private int temp = 10000;
-
+    private double temp = SqlQuery.uCredits;
+    private String tempProd = "";
+    private String tempPrice= "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -60,9 +61,30 @@ public class QR extends AppCompatActivity implements ZXingScannerView.ResultHand
     @Override
     public void handleResult(Result rawResult) {
 
-        int amount = Integer.parseInt(rawResult.getText());
-        temp -= amount;
-        Toast.makeText(getApplicationContext(), Integer.toString(temp), Toast.LENGTH_SHORT).show();
+        try {
+            String tempString =  rawResult.getText().toString();
+            int index =  rawResult.toString().indexOf(":");
+            char [] prod_arr = new char[index];
+            char [] prod_price = new char[10];
+            tempString.getChars(0,index,prod_arr,0);
+            rawResult.getText().getChars(index+1, tempString.length(),prod_price,0);
+
+            for (int a = 0 ; a< prod_arr.length; a++){
+                tempProd += String.valueOf(prod_arr[a]);
+            }
+            for (int i = 0; i < prod_price.length; i++) {
+                tempPrice += String.valueOf(prod_price[i]);
+            }
+
+
+//            String prodName = prod_arr.toString();
+//`
+//            int amount = Integer.parseInt(rawResult.getText());
+//            temp -= amount;
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        Toast.makeText(getApplicationContext(), Double.toString(temp-Double.parseDouble(tempPrice)) , Toast.LENGTH_SHORT).show();
         LayoutInflater layoutInflater = LayoutInflater.from(QR.this);
         View promptView = layoutInflater.inflate(R.layout.validatepin,null);
         final EditText txtpin = (EditText) promptView.findViewById(R.id.txt_pin);
@@ -93,7 +115,7 @@ public class QR extends AppCompatActivity implements ZXingScannerView.ResultHand
         final AlertDialog alertDialog = imgBuilder.create();
         alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         alertDialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        
+
         alertDialog.show();
         for(final Button b : btnArray){
 
@@ -118,6 +140,8 @@ public class QR extends AppCompatActivity implements ZXingScannerView.ResultHand
                     }
                     if(txtpin.getText().toString().equals("4000")){
                         Toast.makeText(QR.this, "Transaction successful!", Toast.LENGTH_SHORT).show();
+                        SqlQuery query = new SqlQuery();
+                        query.startTransaction(tempProd,Double.parseDouble(tempPrice));
                         Intent i = new Intent(getApplicationContext(), QR.class);
                         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         alertDialog.dismiss();
