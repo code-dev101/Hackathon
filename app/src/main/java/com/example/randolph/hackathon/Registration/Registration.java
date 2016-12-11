@@ -64,6 +64,34 @@ public class Registration extends AppCompatActivity {
         btReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try {
+                    firstName = etFirstName.getText().toString();
+                    middleName = etMiddleName.getText().toString();
+                    lastName = etLastName.getText().toString();
+                    address = etAddress.getText().toString();
+                    year = Integer.toString(dpBirthday.getYear());
+                    month = Integer.toString(dpBirthday.getMonth());
+                    day = Integer.toString(dpBirthday.getDayOfMonth());
+                    contactNum = etContactNum.getText().toString();
+                    emailAdd = etEmailAdd.getText().toString();
+                    cardNumber = etCardNum.getText().toString();
+                    pinCode = etPinCode.getText().toString();
+                    username = etUsername.getText().toString();
+                    password = etPassword.getText().toString();
+                    birthday = year + "-" + month + "-" + day;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
+                try {
+                    SqlQuery query = new SqlQuery();
+                    query.createAccount(username, password, firstName, middleName, lastName, birthday, contactNum, emailAdd, cardNumber, pinCode);
+                    Toast.makeText(getApplicationContext(), "Successfully created an account.", Toast.LENGTH_LONG).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
                 Intent loadMenu = new Intent(getApplicationContext(), Login.class);
                 startActivity(loadMenu);
             }
@@ -75,27 +103,6 @@ public class Registration extends AppCompatActivity {
 
     public void createAccount(View view){
         //save user data to database
-        firstName = etFirstName.getText().toString();
-        middleName = etMiddleName.getText().toString();
-        lastName = etLastName.getText().toString();
-        address = etAddress.getText().toString();
-        year = Integer.toString(dpBirthday.getYear());
-        month = Integer.toString(dpBirthday.getMonth());
-        day = Integer.toString(dpBirthday.getDayOfMonth());
-        contactNum = etContactNum.getText().toString();
-        emailAdd = etEmailAdd.getText().toString();
-        cardNumber = etCardNum.getText().toString();
-        pinCode = etPinCode.getText().toString();
-        username = etUsername.getText().toString();
-        password = etPassword.getText().toString();
-        birthday = year + "-" + month + "-" + day;
-
-
-        SqlQuery query = new SqlQuery();
-        query.createAccount(username, password, firstName, middleName, lastName, birthday, contactNum, emailAdd, cardNumber, pinCode);
-
-
-        Toast.makeText(this, "Successfully created an account.", Toast.LENGTH_SHORT).show();
 
     }
 

@@ -90,6 +90,15 @@ public class MainMenu extends AppCompatActivity
         } else if (id == R.id.nav_expenses) {
             intent = new Intent(this, Expenses_activity.class);
             startActivity(intent);
+
+        } else if (id == R.id.nav_manage) {
+
+        } else if (id == R.id.nav_share) {
+
+        } else if (id == R.id.nav_send) {
+
+
+
         }
 //        else if (id == R.id.nav_manage) {
 //

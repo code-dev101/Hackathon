@@ -9,6 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.randolph.hackathon.Registration.Registration;
 
@@ -41,6 +42,7 @@ public class Login extends AppCompatActivity {
 
                     boolean auth = sql.isRegistered(sUname, sUpass);
                     if(auth == true){
+//                        Toast.makeText(Login.this, "SUCESS!", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(getApplicationContext(), MainMenu.class);
                         startActivity(i);
                     }
