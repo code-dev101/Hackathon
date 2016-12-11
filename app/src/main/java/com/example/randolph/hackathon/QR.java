@@ -93,18 +93,22 @@ public class QR extends AppCompatActivity implements ZXingScannerView.ResultHand
         final AlertDialog alertDialog = imgBuilder.create();
         alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         alertDialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+        
         alertDialog.show();
         for(final Button b : btnArray){
+
             b.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(view.getId()-2131493031 <10)
-                        txtpin.setText(txtpin.getText()+ Integer.toString(view.getId()-2131493031));
-                    else if(view.getId()-2131493031 ==11){
-                        txtpin.setText(txtpin.getText()+ Integer.toString(view.getId()-2131493042));
-
-                    }else if(view.getId()-2131493031 ==10){
+//                    Toast.makeText(QR.this, Integer.toString(view.getId()-2131493039), Toast.LENGTH_SHORT).show();
+                    if(view.getId()-2131493039 <10) {
+                        txtpin.setText(txtpin.getText() + Integer.toString(view.getId()-2131493039));
+//                        Toast.makeText(QR.this, Integer.toString(view.getId()-2131493039), Toast.LENGTH_SHORT).show();
+                    }
+                    else if(view.getId()-2131493039 ==11){
+                        txtpin.setText(txtpin.getText()+ Integer.toString(view.getId()-2131493050));
+//                        Toast.makeText(QR.this, Integer.toString(view.getId()-2131493050), Toast.LENGTH_SHORT).show();
+                    }else if(view.getId()-2131493039==10){
                         txtpin.setText("");
                     }else{
                         int length = txtpin.getText().length();
