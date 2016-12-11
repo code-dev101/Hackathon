@@ -42,12 +42,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
+
         <activity android:name=".MainMenu"></activity>
         <activity android:name=".Transaction.Email"/>
-=======
-        <activity android:name=".Transaction.Email" />
->>>>>>> 6e88c551c554a6dd0b04c0d5928143ae1940cc83
+
+
 
         <!--
      ATTENTION: This was auto-generated to add Google Play services to your project for

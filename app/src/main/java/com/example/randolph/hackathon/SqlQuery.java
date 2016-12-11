@@ -5,6 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+import android.widget.Toast;
+
+import com.example.randolph.hackathon.Registration.Registration;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -13,6 +17,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.SimpleFormatter;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by user on 12/10/2016.
@@ -63,8 +69,8 @@ public class SqlQuery {
                 db.execSQL("CREATE TABLE IF NOT EXISTS "+TABLE_CATEGORY+ " (Category_id INTEGER PRIMARY KEY AUTOINCREMENT, "+_sCategory+" VARCHAR(20), "+_sPct+" VARCHAR(20) )");
 
                 //CREATE TRANSACTION
-                db.execSQL("CREATE TABLE IF NOT EXISTS "+TABLE_TRANSACTION+" ("+_sTid+" INTEGER PRIMARY KEY AUTONINCREMENT, "+_sTransName+" VARCHAR(30)," +
-                        ""+_sAMount+" DOUBLE(11,2), "+_dateToday+" DATETIME, "+uID+" ) " );
+                db.execSQL("CREATE TABLE IF NOT EXISTS "+TABLE_TRANSACTION+" ("+_sTid+" INTEGER PRIMARY KEY AUTOINCREMENT, "+_sTransName+" VARCHAR(30)," +
+                        ""+_sAMount+" DOUBLE(11,2), "+_dateToday+" DATETIME, "+_sUid+" INTEGER);  " );
 
 
 
@@ -79,9 +85,10 @@ public class SqlQuery {
     public void createAccount(String sUname, String sUpass, String sFname, String sMname, String sLname,String sBday, String sContact,String sEmail, String sCarnNm,  String sPin){
         try{
             //("+_sUname+", "+_sUpass+" , "+_sFname+", "+_sMname+", "+_sLname+" , "+_sEmail+" ," +"+_sCardNm+", "+_sPin+")
-            db.execSQL("INSERT INTO  "+ TABLE_USER +"  VALUES (1, '"+sUname+"','"+sUpass+"','"+sFname+"', '"+sMname+"', '"+sLname+"', '"+sBday+"' , "+sContact+", '"+sEmail+"' , '"+sCarnNm+"', "+sPin+",20000.00);");
-
+            db.execSQL("INSERT INTO  "+ TABLE_USER +"  VALUES (0, '"+sUname+"','"+sUpass+"','"+sFname+"', '"+sMname+"', '"+sLname+"', '"+sBday+"' , "+sContact+", '"+sEmail+"' , '"+sCarnNm+"', "+sPin+",20000.00);");
+            ;
         }catch (Exception ex){
+            Log.d(TAG, "createAccount: " + ex.getMessage());
             ex.printStackTrace();
         }
 
@@ -94,7 +101,7 @@ public class SqlQuery {
                 uCredits = c.getDouble(0);
                 DateFormat transactTime = new SimpleDateFormat("YYYY-mm-dd HH:mm:ss");
                 Date dateObj = new Date();
-                db.execSQL("INSERT INTO "+TABLE_TRANSACTION+" VALUES (1,'"+_productname+"', "+ _amount+" , '"+transactTime.format(dateObj).toString()+"')");
+                db.execSQL("INSERT INTO "+TABLE_TRANSACTION+" VALUES (0,'"+_productname+"', "+ _amount+" , '"+transactTime.format(dateObj).toString()+"')");
                 uCredits -= _amount;
                 updateCredits(uCredits);
             }
