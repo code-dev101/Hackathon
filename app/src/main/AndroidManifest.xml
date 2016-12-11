@@ -4,16 +4,18 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<<<<<<< HEAD
+=======
 
+>>>>>>> 4885108687ce1f6f2edf58b43b746e6b468d6680
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-feature android:name="android.hardware.camera.autofocus"/>
-
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:allowBackup="true"
@@ -21,29 +23,33 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
-
-        <activity android:name=".Registration.Registration"/>
-        <activity android:name=".QR"/>
+        <activity android:name=".Expenses_activity" android:label="Expenses"/>
+        <activity android:name=".Registration.Registration" />
+        <activity android:name=".QR" />
         <activity android:name=".Category" />
-
-        <activity android:name=".Login"  android:theme="@style/AppTheme.NoActionBar" >
+        <activity
+            android:name=".MainMenu"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".MainMenu"></activity>
         <activity android:name=".Transaction.Email"/>
+=======
+        <activity android:name=".Transaction.Email" />
+>>>>>>> 6e88c551c554a6dd0b04c0d5928143ae1940cc83
 
-
-        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <!--
+     ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
     </application>
 
 </manifest>
