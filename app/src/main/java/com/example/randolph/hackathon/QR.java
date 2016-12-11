@@ -122,15 +122,15 @@ public class QR extends AppCompatActivity implements ZXingScannerView.ResultHand
             b.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(QR.this, Integer.toString(view.getId()-2131493042), Toast.LENGTH_SHORT).show();
-                    if(view.getId()-2131493042 <10) {
-                        txtpin.setText(txtpin.getText() + Integer.toString(view.getId()-2131493042));
+                    Toast.makeText(QR.this, Integer.toString(view.getId()-2131493046), Toast.LENGTH_SHORT).show();
+                    if(view.getId()-2131493046 <10) {
+                        txtpin.setText(txtpin.getText() + Integer.toString(view.getId()-2131493046));
 //                        Toast.makeText(QR.this, Integer.toString(view.getId()-2131493039), Toast.LENGTH_SHORT).show();
                     }
-                    else if(view.getId()-2131493042 ==11){
-                        txtpin.setText(txtpin.getText()+ Integer.toString(view.getId()-2131493053));
+                    else if(view.getId()-2131493046 ==11){
+                        txtpin.setText(txtpin.getText()+ Integer.toString(view.getId()-2131493057));
 //                        Toast.makeText(QR.this, Integer.toString(view.getId()-2131493050), Toast.LENGTH_SHORT).show();
-                    }else if(view.getId()-2131493042==10){
+                    }else if(view.getId()-2131493046==10){
                         txtpin.setText("");
                     }else{
                         int length = txtpin.getText().length();
