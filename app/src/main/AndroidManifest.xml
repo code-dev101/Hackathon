@@ -5,10 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-<<<<<<< HEAD
 
-=======
->>>>>>> 056bb95e528c36d8a6924279df485dfac113e857
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -17,10 +14,7 @@
 
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-feature android:name="android.hardware.camera.autofocus"/>
-<<<<<<< HEAD
 
-=======
->>>>>>> 056bb95e528c36d8a6924279df485dfac113e857
 
     <application
         android:allowBackup="true"
@@ -28,55 +22,29 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
 
-=======
-        <activity
-            android:name=".Login"
-            android:theme="@style/AppTheme.NoActionBar">
->>>>>>> 056bb95e528c36d8a6924279df485dfac113e857
 
 
         <activity android:name=".Registration.Registration"/>
         <activity android:name=".QR"/>
         <activity android:name=".Category" />
-        <activity android:name=".MainMenu"  android:theme="@style/AppTheme.NoActionBar" >
-<<<<<<< HEAD
 
-=======
->>>>>>> 056bb95e528c36d8a6924279df485dfac113e857
+        <activity android:name=".Login"  android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
         </activity>
-<<<<<<< HEAD
-        <activity
-            android:name=".Login"
-            android:label="@string/title_activity_main_menu"
-            android:theme="@style/AppTheme.NoActionBar" />
-=======
+        <activity android:name=".Transaction.Email"/>
 
->>>>>>> 056bb95e528c36d8a6924279df485dfac113e857
-        <activity android:name=".Transaction.Email">
 
-        </activity>
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-<<<<<<< HEAD
 
-
-
-
-
-=======
-        </activity>
-
->>>>>>> 056bb95e528c36d8a6924279df485dfac113e857
     </application>
 
 </manifest>
