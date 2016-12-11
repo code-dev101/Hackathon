@@ -88,18 +88,29 @@ public class MainMenu extends AppCompatActivity
         if (id == R.id.nav_account) {
             // Handle the camera action
         } else if (id == R.id.nav_transaction) {
-            intent = new Intent(this,QR.class);
+            intent = new Intent(this, QR.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_expenses) {
             intent = new Intent(this, Expenses_activity.class);
             startActivity(intent);
         }
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+            return true;
+    }
+
+    public void showActivity(View view){
+        Intent i;
+        if(view.getId() == R.id.lAcc){
 
 
+        }else if(view.getId() == R.id.lTransac){
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+
+        }else if(view.getId() == R.id.lDashboard){
+
+
+        }
     }
 }
