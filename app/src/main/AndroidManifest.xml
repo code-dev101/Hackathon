@@ -32,17 +32,13 @@
         <activity android:name=".Registration.Registration" />
 
         <activity android:name=".Category" />
-        <!--<activity android:name=".MainMenu"/>-->
+        <activity android:name=".MainMenu"/>
         <activity
-<<<<<<< HEAD
-            android:name=".MainMenu"
+
+            android:name=".Login"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize">
-=======
-            android:name=".Login"
-            android:theme="@style/AppTheme.NoActionBar">
 
->>>>>>> a2c6ba43b8c9af70639bbd1a931f47814707180f
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
