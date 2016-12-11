@@ -229,7 +229,7 @@
                     android:text="Create Account"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/button2"
+                    android:id="@+id/btncreate"
                     android:onClick="createAccount"
                     />
 
