@@ -90,16 +90,31 @@ public class MainMenu extends AppCompatActivity
         } else if (id == R.id.nav_expenses) {
             intent = new Intent(this, Expenses_activity.class);
             startActivity(intent);
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
         }
+//        else if (id == R.id.nav_manage) {
+//
+//        } else if (id == R.id.nav_share) {
+//
+//        } else if (id == R.id.nav_send) {
+//
+//        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void showActivity(View view){
+        Intent i;
+        if(view.getId() == R.id.lAcc){
+
+
+        }else if(view.getId() == R.id.lTransac){
+
+
+        }else if(view.getId() == R.id.lDashboard){
+
+
+        }
     }
 }

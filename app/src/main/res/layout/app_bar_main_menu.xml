@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.randolph.hackathon.MainMenu">
+    tools:context="com.example.randolph.hackathon.MainMenu"
+    android:background="@drawable/bg">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -26,22 +27,65 @@
         android:layout_marginTop="100dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <Button
-            android:id="@+id/btnTransaction"
-            android:text="Transaction"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btnPayments"
-            android:text="Payments"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btn"
-            android:text=""
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        android:orientation="vertical"
+        android:padding="10dp">
+        <LinearLayout
+            android:id="@+id/lAcc"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showActivity()">
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/clipboardaccount"/>
+            <TextView
+                android:layout_gravity="bottom"
+                android:text="Account"
+                android:textSize="30sp"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lTransac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showActivity()">
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/cashmultiple_o"/>
+            <TextView
+                android:layout_gravity="bottom"
+                android:text="Transaction"
+                android:textSize="30sp"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            </LinearLayout>
+        <LinearLayout
+            android:id="@+id/lDashboard"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showActivity()">
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/viewdashboard"/>
+            <TextView
+                android:layout_gravity="bottom"
+                android:text="Dashboard"
+                android:textSize="30sp"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
     </LinearLayout>
 
 
