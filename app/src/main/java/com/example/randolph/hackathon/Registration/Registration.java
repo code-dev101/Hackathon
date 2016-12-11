@@ -42,6 +42,7 @@ public class Registration extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
         ///delete later
         SqlQuery.createTable(this);
+        //TEST
 
         etFirstName = (EditText)findViewById(R.id.fname);
         etMiddleName = (EditText)findViewById(R.id.mname);
