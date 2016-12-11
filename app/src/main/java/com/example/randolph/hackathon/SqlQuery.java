@@ -45,9 +45,9 @@ public class SqlQuery {
     private static final String _dateToday = "Date_transact";
     private static final String _userCredit = "Credits";
 
-    private static String uID ="";
-    private static String uPin = "";
-    private static Double uCredits = 0.0;
+    public static String uID ="";
+    public static String uPin = "";
+    public static Double uCredits = 15000.0;
 
     public static void createTable(Activity activity){
         try {
@@ -64,7 +64,10 @@ public class SqlQuery {
 
                 //CREATE TRANSACTION
                 db.execSQL("CREATE TABLE IF NOT EXISTS "+TABLE_TRANSACTION+" ("+_sTid+" INTEGER PRIMARY KEY AUTONINCREMENT, "+_sTransName+" VARCHAR(30)," +
-                        ""+_sAMount+" DOUBLE(11,2), "+_dateToday+" DATETIME");
+                        ""+_sAMount+" DOUBLE(11,2), "+_dateToday+" DATETIME, "+uID+" ) " );
+
+
+
             }
 
         } catch (SQLException e) {
@@ -76,7 +79,7 @@ public class SqlQuery {
     public void createAccount(String sUname, String sUpass, String sFname, String sMname, String sLname,String sBday, String sContact,String sEmail, String sCarnNm,  String sPin){
         try{
             //("+_sUname+", "+_sUpass+" , "+_sFname+", "+_sMname+", "+_sLname+" , "+_sEmail+" ," +"+_sCardNm+", "+_sPin+")
-            db.execSQL("INSERT INTO  "+ TABLE_USER +"  VALUES (1, '"+sUname+"','"+sUpass+"','"+sFname+"', '"+sMname+"', '"+sLname+"', '"+sBday+"' , "+sContact+", '"+sEmail+"' , '"+sCarnNm+"', "+sPin+");");
+            db.execSQL("INSERT INTO  "+ TABLE_USER +"  VALUES (1, '"+sUname+"','"+sUpass+"','"+sFname+"', '"+sMname+"', '"+sLname+"', '"+sBday+"' , "+sContact+", '"+sEmail+"' , '"+sCarnNm+"', "+sPin+",20000.00);");
 
         }catch (Exception ex){
             ex.printStackTrace();
@@ -87,11 +90,15 @@ public class SqlQuery {
 
         try {
             if(_productname != null && _amount != 0){
+                c = db.rawQuery("SELECT "+_userCredit+" FROM "+TABLE_USER+" WHERE  "+_sUid+"  = "+uID+";",null);
+                uCredits = c.getDouble(0);
                 DateFormat transactTime = new SimpleDateFormat("YYYY-mm-dd HH:mm:ss");
                 Date dateObj = new Date();
                 db.execSQL("INSERT INTO "+TABLE_TRANSACTION+" VALUES (1,'"+_productname+"', "+ _amount+" , '"+transactTime.format(dateObj).toString()+"')");
+                uCredits -= _amount;
+                updateCredits(uCredits);
             }
-        } catch (SQLException e) {
+        } catch (NullPointerException e) {
             e.printStackTrace();
         }
 
@@ -195,5 +202,6 @@ public class SqlQuery {
     public void updateCredits(Double recentCredits){
         db.execSQL("UPDATE "+TABLE_USER+" SET "+_userCredit+" = "+recentCredits+" WHERE "+_sUid+" = "+uID+"");
     }
+
 
 }

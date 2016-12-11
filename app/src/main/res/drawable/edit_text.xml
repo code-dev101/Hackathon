@@ -6,6 +6,13 @@
     <stroke android:width="2dip"
         android:color="#ff9b06"/>
     <corners
+<<<<<<< HEAD
         android:radius="10dp"/>
 
+=======
+
+        android:radius="10dp"/>
+
+
+>>>>>>> a2c6ba43b8c9af70639bbd1a931f47814707180f
 </shape>
