@@ -13,6 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 public class MainMenu extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -21,9 +23,39 @@ public class MainMenu extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+        
         try {
+
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
+            ImageView account = (ImageView) findViewById(R.id.img1);
+            ImageView transact = (ImageView) findViewById(R.id.img2);
+            ImageView dashboard = (ImageView) findViewById(R.id.img3);
+            account.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+            transact.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i;
+                    i = new Intent(getApplicationContext(), QR.class);
+                    startActivity(i);
+                }
+            });
+            dashboard.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i;
+                    i = new Intent(getApplicationContext(), Expenses_activity.class);
+                    startActivity(i);
+                }
+            });
+
+
+
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -100,17 +132,5 @@ public class MainMenu extends AppCompatActivity
             return true;
     }
 
-    public void showActivity(View view){
-        Intent i;
-        if(view.getId() == R.id.lAcc){
 
-
-        }else if(view.getId() == R.id.lTransac){
-
-
-        }else if(view.getId() == R.id.lDashboard){
-
-
-        }
-    }
 }
